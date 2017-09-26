@@ -1,0 +1,16 @@
+apply plugin: 'ear'
+
+dependencies {
+    deploy project(path: ':calculadora-gradle-war', configuration: 'archives')
+    earlib project(':calculadora-gradle-core')
+    earlib project(':calculadora-gradle-api')
+}
+
+ear {
+    deploymentDescriptor{
+        def warName = project(':calculadora-gradle-war').name
+        def warVersion = project(':calculadora-gradle-war').version
+        def warFileName = warName + '-' + warVersion + '.war'
+        webModule(warFileName, 'calculadora')
+    }
+}

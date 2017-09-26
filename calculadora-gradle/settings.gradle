@@ -1,0 +1,2 @@
+
+include "calculadora-gradle-api", "calculadora-gradle-core", "calculadora-gradle-ear", "calculadora-gradle-war"
